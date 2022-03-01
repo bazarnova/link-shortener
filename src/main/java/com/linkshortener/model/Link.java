@@ -1,34 +1,30 @@
 package com.linkshortener.model;
 
 import java.time.LocalDateTime;
-import java.time.Period;
 
-public class Url {
+public class Link {
 
     private Long id;
 
-    private String longUrl;
+    private String url;
     private String shortUrl;
     private LocalDateTime createdDate;
-    private LocalDateTime toDeleteDate;
-    private LocalDateTime updatedDate;
-
+    private LocalDateTime expDate;
     private Long userId;
 
-    public Url() {
+    public Link() {
     }
 
-    public Url(String shortUrl) {
+    public Link(String shortUrl) {
         this.shortUrl = shortUrl;
     }
 
-    public Url(Long id, String longUrl, String shortUrl, LocalDateTime createdDate, LocalDateTime toDeleteDate, LocalDateTime updatedDate, Long userId) {
+    public Link(Long id, String url, String shortUrl, LocalDateTime createdDate, LocalDateTime expDate, Long userId) {
         this.id = id;
-        this.longUrl = longUrl;
+        this.url = url;
         this.shortUrl = shortUrl;
         this.createdDate = createdDate;
-        this.toDeleteDate = toDeleteDate;
-        this.updatedDate = updatedDate;
+        this.expDate = expDate;
         this.userId = userId;
     }
 
@@ -40,12 +36,12 @@ public class Url {
         this.id = id;
     }
 
-    public String getLongUrl() {
-        return longUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setLongUrl(String longUrl) {
-        this.longUrl = longUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getShortUrl() {
@@ -64,14 +60,6 @@ public class Url {
         this.createdDate = createdDate;
     }
 
-    public LocalDateTime getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDateTime updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
     public Long getUserId() {
         return userId;
     }
@@ -80,11 +68,11 @@ public class Url {
         this.userId = userId;
     }
 
-    public LocalDateTime getToDeleteDate() {
-        return toDeleteDate;
+    public LocalDateTime getExpDate() {
+        return expDate;
     }
 
-    public void setToDeleteDate(LocalDateTime toDeleteDate) {
-        this.toDeleteDate = toDeleteDate;
+    public void setExpDate(LocalDateTime expDate) {
+        this.expDate = expDate;
     }
 }

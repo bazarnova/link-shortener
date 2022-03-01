@@ -1,5 +1,5 @@
 create table linkshortener.users (
-    "id" bigint PRIMARY KEY,
-    "uuid" varchar(36),
-    "secret_key" varchar(100)
+    "id" SERIAL PRIMARY KEY,
+    "name" varchar(36) not null,
+    "password" varchar(100) not null
 );
